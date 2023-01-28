@@ -1,0 +1,254 @@
+[
+	{
+		"category" : "Material Type",
+		"item_type" : "S/S CAST BAR/BILLET"
+	},
+	{
+		"category" : "Material Type",
+		"item_type" : "S/S PEELED BAR"
+	},
+	{
+		"category" : "Material Type",
+		"item_type" : "S/S ROUND BAR"
+	},
+	{
+		"category" : "Material Type",
+		"item_type" : "C/S HEX BAR"
+	},
+	{
+		"category" : "Material Type",
+		"item_type" : "C/S ROUND BAR"
+	},
+	{
+		"category" : "Material Type",
+		"item_type" : "C/S SMLS PIPE"
+	},
+	{
+		"category" : "Material Type",
+		"item_type" : "C/S WELDED PIPE"
+	},
+	{
+		"category" : "Material Type",
+		"item_type" : "S/S SMLS PIPE"
+	},
+	{
+		"category" : "Material Type",
+		"item_type" : "ALLOY STEEL ROUND BAR"
+	},
+	{
+		"category" : "Material Type",
+		"item_type" : "S/S WELDED PIPE"
+	},
+	{
+		"category" : "Material Type",
+		"item_type" : "S/S PLATE"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S B/W - ANSI"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S B/W - ANSI"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S B/W - ANSI (S)"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S B/W - ANSI (S)"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S B/W - ANSI (X)"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S B/W - ANSI (X)"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S B/W - JIS"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S B/W LONG TANGENT- ANSI"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S LAP JOINT - JPF SP001"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S LAP JOINT - JPI"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S LAP JOINT - SU"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S SK SERIES FITTING"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S STUB END"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S STUB END"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S STUB END (S)"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S STUB END (S)"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S STUB END (X)"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S STUB END (X)"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S BARSTOCK FITTING"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S FORGED FITTING"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S FORGED FITTING"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S OLET"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S PIPE NIPPLE (W)"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S FORGED FLANGE - ANSI"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S FORGED FLANGE - ANSI"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S FORGED FLANGE - CORROSION WEIGHT"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S FORGED FLANGE - JIS"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S PLATE FLANGE - ANSI"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "C/S FORGED FITTING"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "C/S FORGED FITTING"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "API C-TEE / CROSS"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "API FORGED FLANGE"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "C/S BARSTOCK FITTING"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "C/S BULL PLUG"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "C/S C-TEE / CROSS"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "C/S C-TEE / CROSS"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "C/S HEX BULL PLUG"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "C/S HEX BULL PLUG"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "C/S HEX SWAGE NIPPLE"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "C/S HEX SWAGE NIPPLE"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "C/S PIPE NIPPLE (S)"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "C/S PIPE NIPPLE (W)"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "C/S SWAGE NIPPLE"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "C/S SWAGE NIPPLE"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S ROUND BULL PLUG"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S SWAGE NIPPLE"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S PLATE FLANGE - ANSI"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S BARSTOCK FITTING"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S B/W - JIS"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "C/S FLANGE"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S FORGED FLANGE - JIS"
+	},
+	{
+		"category" : "Product Line",
+		"item_type" : "S/S LAP JOINT - JPF SP001"
+	}
+]
