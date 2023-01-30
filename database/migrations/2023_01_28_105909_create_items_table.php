@@ -34,8 +34,6 @@ class CreateItemsTable extends Migration
             $table->unsignedInteger('create_user')->length(11)->default(0);
             $table->unsignedInteger('update_user')->length(11)->default(0);
             $table->timestamps();
-            $table->foreign('create_user')->references('id')->on('users');
-            $table->foreign('update_user')->references('id')->on('users');
         });
     }
 
