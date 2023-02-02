@@ -49,7 +49,7 @@ npm install
 
 11. Copy another .env.example file as .env file. This is to determine the API base URL.
 ```
-cd .env.example .env
+cp .env.example .env
 ```
 
 12. Run dev command.
