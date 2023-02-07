@@ -1,4 +1,4 @@
-import {createBrowserRouter, Navigate} from "react-router-dom";
+import {createBrowserRouter, Navigate } from "react-router-dom";
 
 // Layouts
 import AppLayout from "./layouts/AppLayout";
@@ -26,7 +26,6 @@ import Dashboard from "./views/Dashboard";
 import Login from "./views/auth/Login";
 
 
-
 const router = createBrowserRouter([
 	{
 		path: '/',
@@ -45,7 +44,7 @@ const router = createBrowserRouter([
 				element: <ItemsView/>
 			},
 			{
-				path: "/items/add-item",
+				path: "/items/:id",
 				element: <AddItemsView/>
 			},
 			{

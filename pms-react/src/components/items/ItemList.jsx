@@ -1,13 +1,23 @@
 import { useState,useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import DataTable from "react-data-table-component";
 import axiosClient from "../../axios-client";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 export default function ItemList() {
+    const mySwal = withReactContent(Swal);
     const [items,setItems] = useState([]);
     const [columns, setColumns] = useState([]);
     const [pending, setPending] = useState(true);
-    const page_link = "/items/add-item/";
+    const page_link = "/items/";
+
+    const [msg,setMsg] = useState({
+        status: '',
+        content: '',
+    });
+
+    const [processDelete, setProcessDelete] = useState(() => { return '' });
 
     useEffect( () => {
         axiosClient.get('/items')
@@ -31,6 +41,17 @@ export default function ItemList() {
                     width: '40px',
                     selector: row => row.id,
                 },
+                // {
+                //     cell: (row) => <button type="button" onClick={deleteItem(row.id)} className="btn btn-sm btn-danger">
+                //         <i className="fa fa-trash"></i>
+                //     </button>,
+                //     ignoreRowClick: true,
+                //     allowOverflow: true,
+                //     button: true,
+                //     name: '',
+                //     width: '40px',
+                //     selector: row => row.id,
+                // },
                 {
                     name: 'Item Code',
                     width: '150px',
@@ -140,13 +161,47 @@ export default function ItemList() {
 
     },[]);
 
+    const [selectedData, setSelectedData] = useState([]);
+
+    const handleSelectRow = (state) => {
+        setSelectedData(state.selectedRows);
+    };
+
+    const deleteItem = (data_id) => {
+
+        mySwal.fire({
+            title: 'Do you want to delete these Items?',
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Yes",
+            denyButtonText: `No`,
+        })
+        .then((result) => {
+            if (result.isConfirmed) {
+                // axiosClient.delete('/items/'+ data_id)
+                //     .then((response) => {
+                //         console.log(response);
+                //     })
+                //     .catch((err) => {
+                //         console.log(err);
+                //     });
+            } else if (result.isDenied) {
+                Swal.fire("You chose not to delete the item.", "", "info");
+            }
+        });
+    }
+
     return (
         <div className="card">
-            <div className="card-header">
-                <h4 className="card-title">Item list </h4>
+            <div className="card-header d-flex justify-content-between">
+                <h4 className="card-title m-0">Item List</h4>
+                <div>
+                    <button type="button" className="btn btn-sm btn-danger" title="Please select/check an item then click this button to delete it." onClick={deleteItem}>
+                        <i className="fa fa-trash"></i>
+                    </button>
+                </div>
             </div>
             <div className="card-body">
-
                 <div className="row">
                     <div className="col-sm-12">
 
@@ -159,6 +214,7 @@ export default function ItemList() {
                                 selectableRows
                                 responsive
                                 striped
+                                onSelectedRowsChange={handleSelectRow}
                             />
                         </div>
                         

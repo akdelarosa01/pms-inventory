@@ -20,6 +20,8 @@ Route::middleware('auth:sanctum')->group( function() {
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
+    Route::apiResource('/items', ItemController::class);
+    // Route::post('/save-item', [ItemController::class,'save_item']);
     Route::post('/logout', [AuthController::class,'logout']);
 });
 
@@ -27,4 +29,3 @@ Route::middleware('auth:sanctum')->group( function() {
 
 Route::post('/login', [AuthController::class,'login']);
 
-Route::get('/items', [ItemController::class,'items']);

@@ -5,7 +5,7 @@ import { useStateContext } from "../../context/ContextProvider";
 import { useEffect } from "react";
 import axiosClient from "../axios-client";
 
-export default function Header() {
+export default function Header(props) {
     const {user, token, setUser, setToken} = useStateContext()
 
     const Logout = (ev) => {
@@ -22,6 +22,11 @@ export default function Header() {
         axiosClient.get('/user')
             .then(({data}) => {
                 setUser(data);
+            })
+            .catch((error) => {
+                if (error && error.hasOwnProperty('code')) {
+                    console.log(error.code);
+                }
             });
     },[]);
 
