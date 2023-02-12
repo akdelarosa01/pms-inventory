@@ -4,7 +4,7 @@ import { useStateContext } from "../../context/ContextProvider";
 import { useEffect } from "react";
 
 
-export default function AppLayout() {
+function AppLayout() {
     useEffect(() => {
         document.body.setAttribute('data-layout','horizontal');
         document.body.classList.remove('auth-page');
@@ -20,8 +20,8 @@ export default function AppLayout() {
         <div>
 			<Header/>
             <Outlet/>
-
-            
 		</div>
     )
 }
+
+export default AppLayout;

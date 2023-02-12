@@ -4,26 +4,11 @@ import {createBrowserRouter, Navigate } from "react-router-dom";
 import AppLayout from "./layouts/AppLayout";
 import AuthLayout from "./layouts/AuthLayout";
 
-// Items
-import ItemsView from "./views/items/ItemsView";
-import AddItemsView from "./views/items/AddItemsView";
-import ItemTypeView from "./views/items/ItemTypeView";
-// import Users from "./views/masters/Users";
-// import Suppliers from "./views/masters/Suppliers";
-// import Warehouses from "./views/masters/Warehouses";
-
-// // Inventories
-// import InventoryIn from "./views/inventories/InventoryIn";
-// import InventoryChange from "./views/inventories/InventoryChange";
-// import InventoryTransfer from "./views/inventories/InventoryTransfer";
-
-// // Sales
-// import SalesOrder from "./views/sales/SalesOrder";
-
-// // Others
-import NotFound from "./views/NotFound";
-import Dashboard from "./views/Dashboard";
-import Login from "./views/auth/Login";
+import Dashboard from "./components/Dashboard";
+import Login from "./components/auth/Login";
+import NotFound from "./components/NotFound";
+import ItemList from "./components/items/ItemList";
+import ItemForm from "./components/items/ItemForm";
 
 
 const router = createBrowserRouter([
@@ -41,16 +26,20 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/items",
-				element: <ItemsView/>
+				element: <ItemList/>
+			},
+			{
+				path: "/items/create",
+				element: <ItemForm/>
 			},
 			{
 				path: "/items/:id",
-				element: <AddItemsView/>
+				element: <ItemForm/>
 			},
-			{
-				path: "/items/item-type",
-				element: <ItemTypeView/>
-			}
+			// {
+			// 	path: "/items/item-type",
+			// 	element: <ItemTypeView/>
+			// }
 		]
 	},
 	{
