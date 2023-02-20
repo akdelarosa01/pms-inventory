@@ -28,7 +28,7 @@ import {
     DrawerContent,
     DrawerCloseButton,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 
 function Header() {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -127,10 +127,21 @@ function Header() {
                             as={"nav"}
                             display={{ base: "none", md: "flex" }}
                         >
-                            {navLinks.map((a) => (
-                                <Link key={a.name} to={a.href}>
-                                    <Text sx={txtStyle}>{a.name}</Text>
-                                </Link>
+                            {navLinks.map((a,i) => (
+                                (a.name != 'Inventory')? (
+                                    <Link key={i} to={a.href}>
+                                        <Text sx={txtStyle} key={i}>{a.name}</Text>
+                                    </Link>
+                                ) : (
+                                    <Menu key={i}>
+                                        <MenuButton key={i} sx={txtStyle}>Inventory <ChevronDownIcon /></MenuButton>
+                                        <MenuList fontSize={fontSz}>
+                                            <MenuItem as={Link} to='/inventories'>Inventory List</MenuItem>
+                                            <MenuItem>Adjustments</MenuItem>
+                                        </MenuList>
+                                    </Menu>
+                                )
+                                
                             ))}
                         </HStack>
                     </HStack>

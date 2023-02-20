@@ -159,7 +159,7 @@ export default function ItemForm(props) {
         setErrors(null);
         setLoading(true)
 
-        if (item_data.id !== null && item_data.id !== "" && item_data.id == undefined) {
+        if (item_data.id !== null && item_data.id !== "" && item_data.id !== undefined) {
             axiosClient.put('/items/'+item_data.id, item_data)
                 .then(({data}) => {
                     clearForm();
@@ -231,8 +231,6 @@ export default function ItemForm(props) {
                                 frmItem.alloy.value = data.alloy;
                                 frmItem.size.value = data.size;
                                 frmItem.weight.value = data.weight;
-
-                                setViewNow(true);
                                 break;
                             case "FINISHED GOODS":
                                 frmItem.id.value = data.id;
@@ -248,8 +246,6 @@ export default function ItemForm(props) {
                                 frmItem.cut_length.value = data.cut_length;
                                 frmItem.cut_width.value = data.cut_width;
                                 frmItem.std_material_used.value = data.std_material_used;
-
-                                setViewNow(true);
                                 break;
                             default:
                                 frmItem.id.value = data.id;
@@ -267,10 +263,9 @@ export default function ItemForm(props) {
                                 frmItem.std_material_used.value = data.std_material_used;
                                 frmItem.finished_code.value = data.finished_code;
                                 frmItem.finished_desc.value = data.finished_desc;
-
-                                setViewNow(true);
                                 break;
                         }
+                        setViewNow(true);
                     }
                 })
                 .catch((err) => {
@@ -287,7 +282,7 @@ export default function ItemForm(props) {
     useEffect( () => {
         changeItemCategoryView(selected);
         getItemDetails();
-    },[]);
+    },[viewNow]);
 
     return (
         <Container maxW='8xl'>
@@ -367,8 +362,8 @@ export default function ItemForm(props) {
                         <Skeleton isLoaded={viewNow}>
                             <FormControl id="weight" mb={2}>
                                 <FormLabel>Weight</FormLabel>
-                                <NumberInput size="sm" defaultValue={0} precision={2} step={0.01} min={0.01} name="weight" ref={weight_ref} disabled={disable}>
-                                    <NumberInputField />
+                                <NumberInput size="sm" defaultValue={0} precision={2} step={0.01} min={0.01} disabled={disable}>
+                                    <NumberInputField name="weight" ref={weight_ref}/>
                                     <NumberInputStepper>
                                         <NumberIncrementStepper />
                                         <NumberDecrementStepper />
@@ -382,8 +377,8 @@ export default function ItemForm(props) {
                         <Skeleton isLoaded={viewNow}>
                             <FormControl id="cut_weight" mb={2}>
                                 <FormLabel>Cut Weight</FormLabel>
-                                <NumberInput size="sm" defaultValue={0} precision={2} step={0.01} min={0.01} name="cut_weight" ref={cut_weight_ref} disabled={disable}>
-                                    <NumberInputField />
+                                <NumberInput size="sm" defaultValue={0} precision={2} step={0.01} min={0.01} disabled={disable}>
+                                    <NumberInputField name="cut_weight" ref={cut_weight_ref}/>
                                     <NumberInputStepper>
                                         <NumberIncrementStepper />
                                         <NumberDecrementStepper />
@@ -395,8 +390,8 @@ export default function ItemForm(props) {
                         <Skeleton isLoaded={viewNow}>
                             <FormControl id="cut_length" mb={2}>
                                 <FormLabel>Cut Length</FormLabel>
-                                <NumberInput size="sm" defaultValue={0} precision={2} step={0.01} min={0.01} name="cut_length" ref={cut_length_ref} disabled={disable}>
-                                    <NumberInputField />
+                                <NumberInput size="sm" defaultValue={0} precision={2} step={0.01} min={0.01} disabled={disable}>
+                                    <NumberInputField name="cut_length" ref={cut_length_ref}/>
                                     <NumberInputStepper>
                                         <NumberIncrementStepper />
                                         <NumberDecrementStepper />
@@ -408,8 +403,8 @@ export default function ItemForm(props) {
                         <Skeleton isLoaded={viewNow}>
                             <FormControl id="cut_width" mb={2}>
                                 <FormLabel>Cut Width</FormLabel>
-                                <NumberInput size="sm" defaultValue={0} precision={2} step={0.01} min={0.01} name="cut_width" ref={cut_width_ref} disabled={disable}>
-                                    <NumberInputField />
+                                <NumberInput size="sm" defaultValue={0} precision={2} step={0.01} min={0.01}  disabled={disable}>
+                                    <NumberInputField name="cut_width" ref={cut_width_ref}/>
                                     <NumberInputStepper>
                                         <NumberIncrementStepper />
                                         <NumberDecrementStepper />
