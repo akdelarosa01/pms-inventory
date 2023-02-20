@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ItemController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +19,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->group( function() {
     Route::get('/user', function (Request $request) {
+
+        if (Auth::check()) {
+            $user = $request->user();
+            $user = Auth::user()->id;
+        }
+
         return $request->user();
     });
+    
+    Route::delete('/items-delete', [ItemController::class, 'destroy']);
+    Route::get('/items-status', [ItemController::class, 'item_status']);
+    Route::apiResource('/items', ItemController::class);
+    
+    // Route::post('/save-item', [ItemController::class,'save_item']);
     Route::post('/logout', [AuthController::class,'logout']);
 });
 
@@ -27,4 +40,3 @@ Route::middleware('auth:sanctum')->group( function() {
 
 Route::post('/login', [AuthController::class,'login']);
 
-Route::get('/items', [ItemController::class,'items']);
