@@ -216,20 +216,40 @@ function Header() {
                             display={{ md: "flex" }}
 							p={0}
                         >
-                            {navLinks.map((a) => (
-                                <Link key={a.name} to={a.href}>
-                                    <Text sx={{
-										ml: "0px",
-										px: "10px",
-										py: "10px",
-										fontWeight: "500",
-										fontSize: fontSz,
-										_hover: {
-											textDecoration: "none",
-											color: "teal.500",
-										},
-									}}>{a.name}</Text>
-                                </Link>
+                            {navLinks.map((a,i) => (
+                                (a.name != 'Inventory')? (
+                                    <Link key={i} to={a.href}>
+                                        <Text sx={{
+                                            ml: "0px",
+                                            px: "10px",
+                                            py: "10px",
+                                            fontWeight: "500",
+                                            fontSize: fontSz,
+                                            _hover: {
+                                                textDecoration: "none",
+                                                color: "teal.500",
+                                            },
+                                        }}>{a.name}</Text>
+                                    </Link>
+                                ) : (
+                                    <Menu key={i}>
+                                        <MenuButton key={i} sx={{
+                                            ml: "0px",
+                                            px: "10px",
+                                            py: "10px",
+                                            fontWeight: "500",
+                                            fontSize: fontSz,
+                                            _hover: {
+                                                textDecoration: "none",
+                                                color: "teal.500",
+                                            },
+                                        }}>Inventory <ChevronDownIcon /></MenuButton>
+                                        <MenuList fontSize={fontSz}>
+                                            <MenuItem as={Link} to='/inventories'>Inventory List</MenuItem>
+                                            <MenuItem>Adjustments</MenuItem>
+                                        </MenuList>
+                                    </Menu>
+                                )
                             ))}
                         </Stack>
                     </DrawerBody>
