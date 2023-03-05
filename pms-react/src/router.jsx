@@ -9,7 +9,8 @@ import Login from "./components/auth/Login";
 import NotFound from "./components/NotFound";
 import ItemList from "./components/items/ItemList";
 import ItemForm from "./components/items/ItemForm";
-
+import InventoryList from "./components/inventories/InventoryList";
+import InventoryForm from "./components/inventories/InventoryForm";
 
 const router = createBrowserRouter([
 	{
@@ -29,17 +30,13 @@ const router = createBrowserRouter([
 				element: <ItemList/>
 			},
 			{
-				path: "/items/create",
-				element: <ItemForm/>
+				path: "/inventories",
+				element: <InventoryList />
 			},
 			{
-				path: "/items/:id",
-				element: <ItemForm/>
-			},
-			// {
-			// 	path: "/items/item-type",
-			// 	element: <ItemTypeView/>
-			// }
+				path: "/inventories/new",
+				element: <InventoryForm />
+			}
 		]
 	},
 	{
